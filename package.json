@@ -1,0 +1,19 @@
+{
+  "name": "akagi",
+  "version": "0.0.0",
+  "description": "core of kaga",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egoist/akagi.git"
+  },
+  "author": "EGOIST",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/egoist/akagi/issues"
+  },
+  "homepage": "https://github.com/egoist/akagi#readme"
+}
