@@ -3,14 +3,14 @@ import Akagi from './akagi'
 
 test('user signup', async t => {
   const userdata = {
-    username: 'kevin',
-    email: 'i@0x.me',
+    username: Date.now().toString(),
+    email: 'i@0x.meeq',
     password: '122345'
   }
   try {
     const result = await Akagi.User.signUp(userdata)
-    t.ok(result && result.username)
+    t.ok(result && result.email)
   } catch(err) {
-    t.fail(err.message)
+    t.fail(err.messages.join('\n'))
   }
 })
