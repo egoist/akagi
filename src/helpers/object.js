@@ -6,7 +6,7 @@ export function everyTrusty (obj) {
   return true
 }
 
-export function hasEssentialKeys (obj, keys) {
+export function hasEssentialKeys (obj, keys = []) {
   let has = true
   if (keys && keys.length > 0)
     keys.forEach(k => {
