@@ -1,7 +1,11 @@
 import mongoose from 'mongoose'
-mongoose.connect('mongodb://localhost/akagi-test')
 import * as User from './controllers/user'
 
-export default {
-  User
+export default class Akagi {
+  static User = User
+  constructor (config) {
+    this.config = config || {}
+    this.config.url = this.config.url || 'mongodb://localhost/akagi-test'
+    mongoose.connect(this.config.url)
+  }
 }
