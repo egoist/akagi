@@ -4,7 +4,8 @@
   "description": "core of kaga",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "ava ./tests/test-*.js"
+    "test": "ava ./tests/test-*.js",
+    "postinstall": "gulp build"
   },
   "repository": {
     "type": "git",

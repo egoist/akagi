@@ -9,11 +9,14 @@
 Create your **Akagi** instance in `akagi.js`
 
 ```javascript
-import Akagi from './'
+// akagi.js
+// require once in app entry
+import Akagi from 'akagi'
 new Akagi({url: 'mongodb://localhost/akagi-test'})
-export default Akagi
 
+// in some other pages
 // use the built-in models
+import Akagi from 'akagi'
 async function () {
   await Akagi.User.signUp(userdata)
 }
