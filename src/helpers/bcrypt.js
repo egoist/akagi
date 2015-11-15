@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt'
-import pify from 'pify'
 
 export function genSalt (length = 10) {
   return new Promise((resolve, reject) => {
