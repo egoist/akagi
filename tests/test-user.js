@@ -1,13 +1,13 @@
 import test from 'ava'
-import Akagi from './akagi'
+import Akagi from './_akagi'
+import { UserModel } from './_models'
 
 const user_cache = {
   username: Date.now().toString(),
   password: '123456'
 }
 let member
-
-test.serial('user signup', async t => {
+test.before('user signup', async t => {
   const userdata = {
     username: user_cache.username,
     email: `i@${Date.now()}.com`,
@@ -20,6 +20,12 @@ test.serial('user signup', async t => {
     t.fail(err.messages.join('\n'))
   }
 })
+test.after('clean', t => {
+  UserModel.remove({}, err => {
+    t.end()
+  })
+})
+
 
 test.serial('user signin', async t => {
   const userdata = {

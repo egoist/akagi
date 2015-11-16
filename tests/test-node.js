@@ -1,19 +1,32 @@
 import test from 'ava'
-import Akagi from './akagi'
+import Akagi from './_akagi'
+import { NodeModel } from './_models'
 
 const user_cache = {
   username: Date.now().toString(),
   password: '123456'
 }
 let member
-
-test('node create', async t => {
+test.before('user signup', async t => {
   const userdata = {
     username: user_cache.username,
     email: `i@${Date.now()}.com`,
     password: user_cache.password
   }
-  member = await Akagi.User.signUp(userdata)
+  try {
+    const result = member = await Akagi.User.signUp(userdata)
+    t.ok(result && result.email)
+  } catch(err) {
+    t.fail(err.messages.join('\n'))
+  }
+})
+test.after('clean', t => {
+  NodeModel.remove({}, err => {
+    t.end()
+  })
+})
+
+test.serial('node create', async t => {
   const nodeData = {
     name: Date.now().toString(),
     slug: Math.random().toString(36).substring(7),
