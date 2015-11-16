@@ -1,0 +1,32 @@
+{
+  "extends": ["airbnb/base"],
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "binaryLiterals": false,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "destructuring": true,
+    "forOf": false,
+    "generators": true,
+    "modules": true,
+    "objectLiteralComputedProperties": true,
+    "objectLiteralDuplicateProperties": false,
+    "objectLiteralShorthandMethods": true,
+    "objectLiteralShorthandProperties": true,
+    "octalLiterals": true,
+    "regexUFlag": true,
+    "regexYFlag": true,
+    "superInFunctions": false,
+    "templateStrings": true,
+    "unicodeCodePointEscapes": false,
+    "globalReturn": false
+  },
+  "rules": {
+    "semi": [2, "never"]
+  },
+  "parser": "babel-eslint",
+  "env": {
+    "node": true
+  }
+}

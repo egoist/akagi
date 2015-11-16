@@ -1,30 +1,33 @@
 import bcrypt from 'bcrypt'
 
-export function genSalt (length = 10) {
+export function genSalt(length = 10) {
   return new Promise((resolve, reject) => {
-    bcrypt.genSalt(10, (err, salt) => {
-      if (err)
+    bcrypt.genSalt(length, (err, salt) => {
+      if (err) {
         reject(err)
+      }
       resolve(salt)
     })
   })
 }
 
-export function hashPassword (password, salt) {
+export function hashPassword(password, salt) {
   return new Promise((resolve, reject) => {
-    bcrypt.hash(password, salt, function(err, hash) {
-      if (err)
+    bcrypt.hash(password, salt, function hashCallback(err, hash) {
+      if (err) {
         reject(err)
+      }
       resolve(hash)
     })
   })
 }
 
-export function comparePassword (hash, yours) {
+export function comparePassword(hash, yours) {
   return new Promise((resolve, reject) => {
-    bcrypt.compare(yours, hash, function(err, res) {
-      if (err)
+    bcrypt.compare(yours, hash, function compareCallback(err, res) {
+      if (err) {
         reject(err)
+      }
       resolve(res)
     })
   })

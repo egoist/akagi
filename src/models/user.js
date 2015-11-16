@@ -6,22 +6,22 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   apiKey: {
     type: String,
     required: true,
-    unique: true
-  }
+    unique: true,
+  },
 })
 // auto-timestamp plugin
 UserSchema.plugin(timestamp)

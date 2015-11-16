@@ -6,35 +6,35 @@ const NodeSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   slug: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   description: {
-    type: String
+    type: String,
   },
   icon: {
-    type: String
+    type: String,
   },
   nodeLevel: {
     default: 0,
-    type: Number
+    type: Number,
   },
   children: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Node'
-    }
+      ref: 'Node',
+    },
   ],
   moderators: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ]
+      ref: 'User',
+    },
+  ],
 })
 // auto-timestamp plugin
 NodeSchema.plugin(timestamp)
