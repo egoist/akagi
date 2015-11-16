@@ -16,6 +16,11 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  apiKey: {
+    type: String,
+    required: true,
+    unique: true
   }
 })
 // auto-timestamp plugin
